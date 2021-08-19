@@ -379,7 +379,7 @@ tr:hover .cut { opacity: 1; }
       let httpType = format[0]
       let hostName = format[2]
       //format
-      $.post(httpType + "//" + hostName + "/billGenerator/" + JSON.stringify(data) + "/?type=1", () => {
+      $.post(httpType + "//" + hostName + "/billGenerator/?type="+1+"&data="+JSON.stringify(data), () => {
         console.log("send")
         viewBill(httpType + "//" + hostName + "/billView/")
       })

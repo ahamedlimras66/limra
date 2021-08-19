@@ -16,9 +16,9 @@ class BillGenerator:
     def invoice(self, jsdata):
         pass
 
-    def filterBy(self,jsdata):
+    def filterBy(self):
         generatorType = request.args.get("type")
-        jsdata = json.loads(jsdata)
+        jsdata = json.loads(request.args.get("data"))
         if generatorType == "1":
             self.bill(jsdata)
         elif generatorType == "2":

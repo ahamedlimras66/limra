@@ -5,4 +5,4 @@ billGenerator = Blueprint("billGenerator", __name__)
 
 billGeneratorObj = BillGenerator()
 
-billGenerator.add_url_rule("/<jsdata>/", view_func=billGeneratorObj.filterBy, methods=['POST'])
+billGenerator.add_url_rule("/", view_func=billGeneratorObj.filterBy, methods=['POST'])
