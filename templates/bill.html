@@ -375,9 +375,18 @@ tr:hover .cut { opacity: 1; }
 				)
 			}
 			data["productInfo"] = productInfo
-      $.post("http://127.0.0.1:5000/billGenerator/"+JSON.stringify(data)+"/?type=1", () => {
+      let format = window.location.href.split("/")
+      let httpType = format[0]
+      let hostName = format[2]
+      //format
+      $.post(httpType + "//" + hostName + "/billGenerator/" + JSON.stringify(data) + "/?type=1", () => {
         console.log("send")
+        viewBill(httpType + "//" + hostName + "/billView/")
       })
 		}
+
+    function viewBill(link) {
+      window.open(link)
+    }
 	</script>
 </html>
