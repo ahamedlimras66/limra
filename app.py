@@ -1,5 +1,5 @@
 from flask import Flask, url_for
-
+from flask_cors import CORS, cross_origin
 from route.home import home
 from route.bill import bill
 from route.invoice import invoice
@@ -7,6 +7,8 @@ from route.billGenerator import billGenerator
 from route.billView import billView
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 app.register_blueprint(home, url_prefix="/")
 app.register_blueprint(bill, url_prefix="/bill")
