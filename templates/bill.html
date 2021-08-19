@@ -344,15 +344,6 @@ tr:hover .cut { opacity: 1; }
   <td><span contenteditable class="product-qty"></span></td>
           </tr>
         </tbody>
-        <tbody>
-          <tr>
-            <td width="300"><p class="product-name">Front End Consultation</p></td>
-
-
-            <td><span contenteditable class="product-qty"></span></td>
-
-          </tr>
-        </tbody>
 			</table>
 
 
@@ -384,7 +375,9 @@ tr:hover .cut { opacity: 1; }
 				)
 			}
 			data["productInfo"] = productInfo
-			console.log(data)
+      $.post("http://127.0.0.1:5000/billGenerator/"+JSON.stringify(data)+"/?type=1", () => {
+        console.log("send")
+      })
 		}
 	</script>
 </html>
